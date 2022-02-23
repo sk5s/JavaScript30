@@ -51,17 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let sidenav = [
     {
       name: "01-JavaScript-Drum-Kit",
-      href: "../01-JavaScript-Drum-Kit/",
+      href: "/JavaScript30/01-JavaScript-Drum-Kit/",
       target: "_self"
     },
     {
       name: "02-JS-and-CSS-Clock",
-      href: "../02-JS-and-CSS-Clock/",
+      href: "/JavaScript30/02-JS-and-CSS-Clock/",
       target: "_self"
     },
     {
       name: "03-CSS-Variables",
-      href: "../03-CSS-Variables/",
+      href: "/JavaScript30/03-CSS-Variables/",
       target: "_self"
     }
   ]
