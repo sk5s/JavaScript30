@@ -1,13 +1,21 @@
 html {
-  font-size: 10px;
-  background: url('./background.jpg') bottom center;
+  /* font-size: 10px; */
+  background: url('./tobias-keller-2ecH5Lw3zSk-unsplash.jpg') bottom center;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 body,html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  user-select: none;
 }
 
 .keys {
@@ -30,6 +38,10 @@ body,html {
   color: white;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+}
+
+.key kbd, .key .sound{
+  pointer-events: none;
 }
 
 .playing {

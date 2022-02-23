@@ -1,0 +1,22 @@
+{
+  "name": "javascript30",
+  "version": "1.0.0",
+  "description": "![](https://javascript30.com/images/JS3-social-share.png)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx http-server . -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sk5s/JavaScript30.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sk5s/JavaScript30/issues"
+  },
+  "homepage": "https://github.com/sk5s/JavaScript30#readme",
+  "devDependencies": {
+  }
+}

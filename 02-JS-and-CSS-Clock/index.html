@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="preload" as="image" href="./background.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div id="sk5s_top_main_navbar"></div>
+
+  <div class="container">
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    html {
+      background: #018DED url(./background.jpg);
+      /* https://unsplash.it/1500/1000?image=881&blur=5 */
+      background-size: cover;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+      min-height: 100vh;
+      /* filter: blur(8px);
+      -webkit-filter: blur(8px); */
+    }
+
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      flex: 1;
+      align-items: center;
+    }
+    .clock {
+      width: 30rem;
+      height: 30rem;
+      border: 20px solid white;
+      border-radius: 50%;
+      margin: 50px auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px); /* account for the height of the clock hands */
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform-origin: 100%;
+      transform: rotate(90deg);
+      transition: all 0.5s;
+    }
+    .second-hand {
+      background: #f0f0f0;
+    }
+    .hour-hand{
+      background: #555;
+    }
+
+  </style>
+
+  <script>
+    let second_hand = document.querySelector(".second-hand")
+    let min_hand = document.querySelector(".min-hand")
+    let hour_hand = document.querySelector(".hour-hand")
+
+    function set_date(){
+      const now = new Date()
+      const seconds = now.getSeconds()
+      const seconds_deg = (( seconds / 60 ) * 360) + 90
+      second_hand.style.transform = `rotate(${seconds_deg}deg)`
+      console.log(seconds_deg)
+
+      const mins = now.getMinutes()
+      const mins_deg = ((mins / 60) * 360) + 90
+      min_hand.style.transform = `rotate(${mins_deg}deg)`
+
+      const hour = now.getHours()
+      const hour_deg = ((hour / 12) * 360) + 90
+      hour_hand.style.transform = `rotate(${hour_deg}deg)`
+      
+    }
+    setInterval(set_date, 1000);
+  </script>
+  <script src="../sk5s_top_main_navbar.js"></script>
+</body>
+</html>
