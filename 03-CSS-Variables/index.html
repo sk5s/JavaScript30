@@ -24,6 +24,21 @@
   </div>
   <style>
 
+    :root {
+      --base: #ffc600;
+      --spacing: 10px;
+      --blur: 10px;
+    }
+    img {
+      padding: var(--spacing);
+      background: var(--base);
+      filter: blur(var(--blur));
+      max-width: 100%;
+    }
+    .hl {
+      color: var(--base);
+    }
+
     /*
       misc styles, nothing to do with CSS variables
     */
@@ -42,6 +57,7 @@
       font-weight: 100;
       font-size: 50px;
       color: white;
+      max-width: 100%;
     }
     .controls {
       margin-bottom: 50px;
@@ -53,6 +69,15 @@
   </style>
 
   <script>
+    const inputs = Array.from(document.querySelectorAll(".controls input"))
+    inputs.forEach((input) => {
+      input.addEventListener("change",handle_update)
+      input.addEventListener("mousemove",handle_update)
+    })
+    function handle_update(){
+      const suffix = this.dataset.sizing || ''
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+    }
   </script>
 
   <script src="../sk5s_top_main_navbar.js"></script>

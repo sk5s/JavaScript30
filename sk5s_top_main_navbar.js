@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("insert top main navbar")
   let navbar_container = document.getElementById("sk5s_top_main_navbar")
   if (!navbar_container) return
-  navbar_container.style.fontSize = "30px"
+  navbar_container.style.fontSize = "18px"
   navbar_container.style.fontFamily = "monospace,sans-serif"
   navbar_container.style.userSelect = "none"
   navbar_container.style.margin = 0
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ul.style.padding = "10px"
   ul.style.backgroundColor = "#333"
   ul.style.overflow = "hidden"
-  ul.style.fontSize = "30px"
+  // ul.style.fontSize = "30px"
   ul.style.fontFamily = "monospace,sans-serif"
   // ul.style.borderBottomLeftRadius = "8px"
   // ul.style.borderBottomRightRadius = "8px"
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   let close_button = document.createElement("a")
   close_button.innerHTML = "&times;"
-  close_button.style.fontSize = "3rem"
+  // close_button.style.fontSize = ""
   close_button.style.cursor = "pointer"
   close_button.style.color = "#fff"
   close_button.style.display = "block"
