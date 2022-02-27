@@ -63,6 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "03-CSS-Variables",
       href: "/JavaScript30/03-CSS-Variables/",
       target: "_self"
+    },
+    {
+      name: "04-Array-Cardio-Day-1",
+      href: "/JavaScript30/04-Array-Cardio-Day-1/",
+      target: "_self"
     }
   ]
   let open_button = document.createElement("a")
@@ -71,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
   open_button.style.padding = "8px"
   open_button.style.color = "#fff"
   open_button.style.cursor = "pointer"
+  open_button.id = "sk5s_top_main_navbar_open"
   open_button.addEventListener("click", () => {
     div.style.width = "100%"
   })
@@ -118,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   close_button.style.padding = "8px"
   close_button.style.textAlign = "center"
   close_button.style.textDecoration = "none"
+  close_button.id = "sk5s_top_main_navbar_close"
   close_button.addEventListener("click", () => {
     div.style.width = "0"
   })
@@ -157,4 +164,7 @@ document.addEventListener("DOMContentLoaded", () => {
   script.src = "//instant.page/5.1.0"
   script.integrity = "sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"
   document.body.appendChild(script)
+  if (typeof sk5s_top_main_navbar_loaded === "function") {
+    sk5s_top_main_navbar_loaded()
+  }
 })
