@@ -5,20 +5,61 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript30</title>
+  <title>sk5s JavaScript30</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.6.12/plyr.css" />
   <style>
-    html, body {
+    :root {
+      --plyr-color-main: #fd7e14;
+    }
+    html {
       margin: 0;
       padding: 0;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 100px;
+    }
+    .container {
+      margin: 0 auto;
+      max-width: 64rem;
+      width: 90%;
     }
   </style>
 </head>
 
 <body>
   <div id="sk5s_top_main_navbar"></div>
-  <h1>JavaScript30</h1>
+  <div class="container">
+    <h1>sk5s JavaScript30</h1>
+
+    <h2>說明</h2>
+    <p>學習主題是 Vanilla JavaScript 的練習，跟著網路上的 30 Day Vanilla JS Challenge 做練習，它是由加拿大的全端工程師Wes Bos建立的一系列課程，主旨在不使用任何外部框架與函式庫來完成30個純JavaScript的練習，本次預計做前8個。</p>
+
+    <div class="plyr__video-embed" id="player">
+      <iframe
+        src="https://www.youtube.com/embed/2Df21S3J1GQ?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+        allowfullscreen
+        allowtransparency
+        allow="autoplay"
+      ></iframe>
+    </div>
+
+    <h2>
+      點擊導覽列看更多，開始體驗！
+    </h2>
+  </div>
 
   <script src="./sk5s_top_main_navbar.js"></script>
+  <script src="https://cdn.plyr.io/3.6.12/plyr.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const plyr_player = new Plyr('#player');
+    })
+  </script>
 
 </body>
 

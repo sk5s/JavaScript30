@@ -4,7 +4,6 @@
   "description": "![](https://javascript30.com/images/JS3-social-share.png)",
   "main": "index.js",
   "scripts": {
-    "dev": "npx http-server . -c-1"
   },
   "repository": {
     "type": "git",

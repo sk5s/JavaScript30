@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
   div.style.top = 0
   div.style.left = 0
   div.style.backgroundColor = "#111"
-  div.style.overflowX = "hidden"
-  div.style.transition = "0.3s"
+  div.style.overflow = "hidden"
+  div.style.transition = "ease-in-out 0.3s"
   div.style.paddingTop = "60px"
 
   console.log("insert top main navbar")
   let navbar_container = document.getElementById("sk5s_top_main_navbar")
   if (!navbar_container) return
-  navbar_container.style.fontSize = "18px"
+  navbar_container.style.fontSize = "20px"
   navbar_container.style.fontFamily = "monospace,sans-serif"
   navbar_container.style.userSelect = "none"
   navbar_container.style.margin = 0
@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ul.style.padding = "10px"
   ul.style.backgroundColor = "#333"
   ul.style.overflow = "hidden"
-  // ul.style.fontSize = "30px"
-  ul.style.fontFamily = "monospace,sans-serif"
+  ul.style.fontSize = "14px"
+  // ul.style.fontFamily = "monospace,sans-serif"
   // ul.style.borderBottomLeftRadius = "8px"
   // ul.style.borderBottomRightRadius = "8px"
   let nav = [
@@ -143,6 +143,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     a.style.textAlign = "center"
     a.style.textDecoration = "none"
+    a.style.overflow = "hidden"
+    a.style.minWidth = "90%"
 
     div.appendChild(a)
   }
