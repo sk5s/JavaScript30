@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   div.style.transition = "ease-in-out 0.3s"
   div.style.paddingTop = "60px"
 
-  console.log("insert top main navbar")
+  // console.log("insert top main navbar")
   let navbar_container = document.getElementById("sk5s_top_main_navbar")
   if (!navbar_container) return
   navbar_container.style.fontSize = "20px"
