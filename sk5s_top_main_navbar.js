@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "04-Array-Cardio-Day-1",
       href: "/JavaScript30/04-Array-Cardio-Day-1/",
       target: "_self"
+    },
+    {
+      name: "05-Flex-Panel-Gallery",
+      href: "/JavaScript30/05-Flex-Panel-Gallery/",
+      target: "_self"
     }
   ]
   let open_button = document.createElement("a")
