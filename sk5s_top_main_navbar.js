@@ -8,9 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   div.style.top = 0
   div.style.left = 0
   div.style.backgroundColor = "#111"
-  div.style.overflow = "hidden"
+  // div.style.overflow = "hidden"
+  div.style.overflowY = "scroll"
   div.style.transition = "ease-in-out 0.3s"
-  div.style.paddingTop = "60px"
+  // div.style.paddingTop = "60px"
+  // div.style.paddingBottom = "120px"
 
   // console.log("insert top main navbar")
   let navbar_container = document.getElementById("sk5s_top_main_navbar")
@@ -72,6 +74,31 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       name: "05-Flex-Panel-Gallery",
       href: "/JavaScript30/05-Flex-Panel-Gallery/",
+      target: "_self"
+    },
+    {
+      name: "06-Type-Ahead",
+      href: "/JavaScript30/06-Type-Ahead/",
+      target: "_self"
+    },
+    {
+      name: "07-Array-Cardio-Day-2",
+      href: "/JavaScript30/07-Array-Cardio-Day-2/",
+      target: "_self"
+    },
+    {
+      name: "08-Fun-with-HTML5-Canvas",
+      href: "/JavaScript30/08-Fun-with-HTML5-Canvas/",
+      target: "_self"
+    },
+    {
+      name: "09-Dev-Tools-Domination",
+      href: "/JavaScript30/09-Dev-Tools-Domination/",
+      target: "_self"
+    },
+    {
+      name: "10-Hold-Shift-and-Check-Checkboxes",
+      href: "/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/",
       target: "_self"
     }
   ]
