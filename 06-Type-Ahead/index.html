@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <div id="sk5s_top_main_navbar"></div>
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+const cities = []
+fetch(endpoint).then(blob => blob.json()).then(json => cities.push(...json))
+function find_matches(word_to_match, cities) {
+  return cities.filter(place => {
+    const regex = new RegExp(word_to_match, 'gi')
+    return place.city.match(regex) || place.state.match(regex)
+  })
+}
+function display_matches() {
+  const match_array = find_matches(this.value, cities)
+  const html = match_array.map(place => {
+    const regex = new RegExp(this.value, 'gi')
+    const city_name = place.city.replace(regex, `<span class="hl">${this.value}</span>`)
+    const state_name = place.state.replace(regex, `<span class="hl">${this.value}</span>`)
+    return `
+      <li>
+        <span class="name">${city_name}, ${state_name}</span>
+        <span class="population">${place.population}</span>
+      </li>
+    `
+  }).join('')
+  suggestions.innerHTML = html
+}
+const search_input = document.querySelector(".search")
+const suggestions = document.querySelector(".suggestions")
+
+search_input.addEventListener("change", display_matches)
+search_input.addEventListener("keyup", display_matches)
+
+</script>
+<script src="../sk5s_top_main_navbar.js"></script>
+</body>
+</html>
