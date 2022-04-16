@@ -2,11 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Array Cardio 💪💪</title>
+  <title>sk5s: Array Cardio 💪💪</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
 </head>
 <body>
+  <div id="sk5s_top_main_navbar"></div>
   <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
-  <script>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script defer>
+    eruda.init({
+      tool: ['console']
+    });
+    eruda.show();
+    function sk5s_top_main_navbar_loaded() {
+      document.getElementById("sk5s_top_main_navbar_open").addEventListener("click", () => {
+        eruda.hide()
+      })
+      document.getElementById("sk5s_top_main_navbar_close").addEventListener("click", () => {
+        eruda.show()
+      })
+    }
+  </script>
+  <script defer>
     // ## Array Cardio Day 2
 
     const people = [
@@ -25,17 +48,32 @@
     ];
 
     // Some and Every Checks
-    // Array.prototype.some() // is at least one person 19 or older?
-    // Array.prototype.every() // is everyone 19 or older?
+    // Array.prototype.some() // is at least one person 18 or older?
+    const isAdult = people.some(person => (new Date()).getFullYear() - person.year >= 18)
+    console.log({isAdult})
+    // Array.prototype.every() // is everyone 18 or older?
+    const allAdults = people.every(person => (new Date()).getFullYear() - person.year >= 18)
+    console.log({allAdults})
 
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    const comment = comments.find(comment => comment.id === 823423)
+    console.log(comment)
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    const index = comments.findIndex(comment => comment.id === 823423)
+    console.log(index)
+    const new_comments = [
+      ...comments.slice(0,index),
+      ...comments.slice(index + 1)
+    ]
+    console.table(new_comments)
 
   </script>
+  
+  <script src="../sk5s_top_main_navbar.js"></script>
 </body>
 </html>
