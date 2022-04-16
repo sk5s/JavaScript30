@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>sk5s: HTML5 Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div id="sk5s_top_main_navbar"></div>
+    <canvas id="draw" width="600" height="400"></canvas>
+    <script>
+      const canvas = document.querySelector('#draw')
+      const ctx = canvas.getContext('2d')
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight - 60
+      ctx.strokeStyle = '#BADA55'
+      ctx.lineJoin = 'round'
+      ctx.lineCap = 'round'
+      ctx.lineWidth = 40
+      // ctx.globalCompositeOperation = 'multiply'
+
+      let isDrawing = false
+      let lastX = 0
+      let lastY = 0
+      let hue = 0
+      let direction = true
+      function draw(e){
+        if (!isDrawing) return
+        console.log(e)
+        ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`
+        ctx.beginPath()
+        ctx.moveTo(lastX,lastY)
+        ctx.lineTo(e.offsetX, e.offsetY)
+        lastX = e.offsetX
+        lastY = e.offsetY
+        ctx.stroke()
+        hue++
+        if (ctx.lineWidth >= 80 || ctx.lineWidth <= 10){
+          direction = !direction
+        }
+        if (direction) {
+          ctx.lineWidth++
+        } else {
+          ctx.lineWidth--
+        }
+      }
+
+      canvas.addEventListener('mousemove', draw)
+      canvas.addEventListener('mousedown', (e) => {
+        isDrawing = true
+        lastX = e.offsetX
+        lastY = e.offsetY
+      })
+      canvas.addEventListener('mouseup', () => isDrawing = false)
+      canvas.addEventListener('mouseout', () => isDrawing = false)
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
+
+    <script src="../sk5s_top_main_navbar.js"></script>
+  </body>
+</html>
