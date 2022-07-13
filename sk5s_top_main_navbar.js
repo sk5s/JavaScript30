@@ -90,16 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "08-Fun-with-HTML5-Canvas",
       href: "/JavaScript30/08-Fun-with-HTML5-Canvas/",
       target: "_self"
-    },
-    {
-      name: "09-Dev-Tools-Domination",
-      href: "/JavaScript30/09-Dev-Tools-Domination/",
-      target: "_self"
-    },
-    {
-      name: "10-Hold-Shift-and-Check-Checkboxes",
-      href: "/JavaScript30/10-Hold-Shift-and-Check-Checkboxes/",
-      target: "_self"
     }
   ]
   let open_button = document.createElement("a")
