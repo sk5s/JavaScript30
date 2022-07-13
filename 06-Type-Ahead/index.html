@@ -5,12 +5,14 @@
   <title>sk5s: Type Ahead 👀</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
 </head>
 <body>
 
   <div id="sk5s_top_main_navbar"></div>
   <form class="search-form">
-    <input type="text" class="search" placeholder="City or State">
+    <input type="text" class="search step-1" placeholder="City or State">
     <ul class="suggestions">
       <li>Filter for a city</li>
       <li>or a state</li>
@@ -46,6 +48,27 @@ const suggestions = document.querySelector(".suggestions")
 
 search_input.addEventListener("change", display_matches)
 search_input.addEventListener("keyup", display_matches)
+
+const tour = new Shepherd.Tour({
+  useModalOverlay: true,
+  defaultStepOptions: {
+    classes: 'shadow-md bg-purple-dark'
+  }
+})
+tour.addStep({
+  text: '輸入英文字母測試',
+  attachTo: {
+    element: '.step-1',
+    on: 'bottom'
+  },
+  buttons: [
+    {
+      text: '關閉',
+      action: tour.next
+    }
+  ]
+})
+tour.start()
 
 </script>
 <script src="../sk5s_top_main_navbar.js"></script>

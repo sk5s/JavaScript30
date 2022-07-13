@@ -5,6 +5,8 @@
   <title>sk5s: Flex Panels 💪</title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
 </head>
 <body>
   <style>
@@ -101,7 +103,7 @@
 
   <div id="sk5s_top_main_navbar"></div>
   <div class="panels">
-    <div class="panel panel1">
+    <div class="panel panel1 step-1">
       <p>Hey</p>
       <p>Let's</p>
       <p>Dance</p>
@@ -142,6 +144,27 @@
       panel.addEventListener("click", toggle_open)
       panel.addEventListener("transitionend", toggle_active)
     })
+
+    const tour = new Shepherd.Tour({
+      useModalOverlay: true,
+      defaultStepOptions: {
+        classes: 'shadow-md bg-purple-dark'
+      }
+    })
+    tour.addStep({
+      text: '點擊方塊即可展開',
+      attachTo: {
+        element: '.step-1',
+        on: 'top'
+      },
+      buttons: [
+        {
+          text: '關閉',
+          action: tour.next
+        }
+      ]
+    })
+    tour.start()
   </script>
 
 

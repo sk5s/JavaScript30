@@ -6,12 +6,15 @@
   <link rel="stylesheet" href="style.css">
   <link rel="preload" as="image" href="./tobias-keller-2ecH5Lw3zSk-unsplash.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
 </head>
 <body>
 
   <div id="sk5s_top_main_navbar"></div>
 
-  <div class="keys">
+  <div class="keys step-1">
     <div data-key="65" class="key">
       <kbd>A</kbd>
       <span class="sound">clap</span>
@@ -93,6 +96,40 @@
       }, 100);
     })
   })
+
+  const tour = new Shepherd.Tour({
+    useModalOverlay: true,
+    defaultStepOptions: {
+      classes: 'shadow-md bg-purple-dark'
+    }
+  })
+  tour.addStep({
+    text: '點擊按鈕即可發出聲音。',
+    attachTo: {
+      element: '.step-1',
+      on: 'top'
+    },
+    buttons: [
+      {
+        text: '繼續',
+        action: tour.next
+      }
+    ]
+  })
+  tour.addStep({
+    text: '按下鍵盤也可發出聲音。',
+    attachTo: {
+      element: '.step-1',
+      on: 'top'
+    },
+    buttons: [
+      {
+        text: '關閉',
+        action: tour.next
+      }
+    ]
+  })
+  tour.start()
 </script>
 
 <script src="../sk5s_top_main_navbar.js"></script>

@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "08-Fun-with-HTML5-Canvas",
       href: "/JavaScript30/08-Fun-with-HTML5-Canvas/",
       target: "_self"
-    }
+    },
   ]
   let open_button = document.createElement("a")
   open_button.innerHTML = "&#9776;"

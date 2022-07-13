@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <title>sk5s: HTML5 Canvas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css"/>
   </head>
   <body>
     <div id="sk5s_top_main_navbar"></div>
-    <canvas id="draw" width="600" height="400"></canvas>
+    <canvas id="draw" width="600" height="400" class="step-1"></canvas>
     <script>
       const canvas = document.querySelector('#draw')
       const ctx = canvas.getContext('2d')
@@ -53,6 +55,27 @@
       })
       canvas.addEventListener('mouseup', () => isDrawing = false)
       canvas.addEventListener('mouseout', () => isDrawing = false)
+
+      const tour = new Shepherd.Tour({
+        useModalOverlay: true,
+        defaultStepOptions: {
+          classes: 'shadow-md bg-purple-dark'
+        }
+      })
+      tour.addStep({
+        text: '使用滑鼠於空白處畫',
+        attachTo: {
+          element: '.step-1',
+          on: 'bottom'
+        },
+        buttons: [
+          {
+            text: '關閉',
+            action: tour.next
+          }
+        ]
+      })
+      tour.start()
     </script>
 
     <style>
