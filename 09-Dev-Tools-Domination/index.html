@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>sk5s: Console Tricks!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="sk5s_top_main_navbar"></div>
+  <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+  <script defer>
+    eruda.init({
+      tool: ['console']
+    });
+    eruda.show();
+    function sk5s_top_main_navbar_loaded() {
+      document.getElementById("sk5s_top_main_navbar_open").addEventListener("click", () => {
+        eruda.hide()
+      })
+      document.getElementById("sk5s_top_main_navbar_close").addEventListener("click", () => {
+        eruda.show()
+      })
+    }
+  </script>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log("Hello")
+
+    // Interpolated
+    console.log("Hello from %s","console")
+
+    // Styled
+    console.log("%c I like color","font-size: 50px;background: red;")
+
+    // warning!
+    console.warn("Oh no!")
+
+    // Error
+    console.error("Oh no!")
+
+    // Info
+    console.info("This is a practice project")
+
+    // Testing
+    const p = document.querySelector("p")
+    console.assert(p.classList.contains("ouch"), "That's wrong")
+
+    // Viewing DOM Elements
+    console.dir(p)
+
+    // Grouping together
+    dogs.forEach((dog) => {
+      console.groupCollapsed(dog.name)
+      console.log(`This is ${dog.name}`)
+      console.log(`${dog.name} is ${dog.age} years old`)
+      console.groupEnd(dog.name)
+    })
+
+    // counting
+    console.count("sk5s")
+    console.count("sk5s")
+    console.count("sk5s")
+    console.count("sk5s")
+
+    // timing
+    console.time("fetching data")
+    fetch("https://api.github.com/users/sk5s").then((data) => {
+      return data.json()
+    }).then((data) => {
+      console.timeEnd("fetching data")
+      console.log(data)
+    })
+
+    // table
+    console.table(dogs)
+
+  </script>
+  <script src="../sk5s_top_main_navbar.js"></script>
+</body>
+</html>

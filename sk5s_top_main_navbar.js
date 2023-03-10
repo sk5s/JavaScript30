@@ -91,6 +91,11 @@ document.addEventListener("DOMContentLoaded", () => {
       href: "/JavaScript30/08-Fun-with-HTML5-Canvas/",
       target: "_self"
     },
+    {
+      name: "09-Dev-Tools-Domination",
+      href: "/JavaScript30/09-Dev-Tools-Domination/",
+      target: "_self"
+    }
   ]
   let open_button = document.createElement("a")
   open_button.innerHTML = "&#9776;"
